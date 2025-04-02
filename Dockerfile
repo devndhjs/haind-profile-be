@@ -1,5 +1,5 @@
 # Sử dụng image Node.js chính thức
-FROM node:18
+FROM node:20
 
 # Đặt thư mục làm việc trong container
 WORKDIR /usr/src/app
