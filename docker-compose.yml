@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nestjs-app
+    ports:
+      - '${PORT}:${PORT}'
+    volumes:
+      - .:/usr/src/app # Mount thư mục làm việc để dễ dàng phát triển
+    environment:
+      - NODE_ENV=production
