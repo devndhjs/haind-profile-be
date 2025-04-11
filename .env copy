@@ -1,8 +1,9 @@
 OCI_TENANCY_ID=ocid1.tenancy.oc1..aaaaaaaa3ezhmpv6jandwruwgyxyv2ulyzcdzbeuwkunrobc33n3sifru4pa
 OCI_USER_ID=ocid1.user.oc1..aaaaaaaapumr2evpuiakvtfm3mgx336ls2lecxfmkh4nlm7caq2ddyrm232a
 OCI_KEY_FINGERPRINT=af:56:bc:19:e6:11:22:bf:11:b0:7a:63:e6:c9:f5:c5
-# OCI_PRIVATE_KEY=""
-OCI_PRIVATE_KEY_PATH="C:/Users/DesmondNguyen/Downloads/bb/nduchai1998@gmail.com_2025-04-02T03_16_00.068Z.pem"
+OCI_PRIVATE_KEY=
+OCI_PRIVATE_KEY_PATH="/home/ubuntu/keys/be-profile.private.pem"
 OCI_REGION=ap-osaka-1
 OCI_NAMESPACE=axe1jq3yolzc
 OCI_BUCKET_NAME=bucket-20250401-0910
+PORT=3000
