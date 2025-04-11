@@ -14,10 +14,11 @@ export class OCIStorageService {
 
   constructor(private configService: ConfigService) {
     // const privateKeyPath = this.configService.get('OCI_PRIVATE_KEY_PATH');
-    const privateKey =
-      this.configService.get('OCI_PRIVATE_KEY') 
-      // ||
-      // fs.readFileSync(path.resolve(privateKeyPath), 'utf8');
+    const privateKey = this.configService
+      .get('OCI_PRIVATE_KEY')
+      ?.replace(/\\n/g, '\n');
+    // ||
+    // fs.readFileSync(path.resolve(privateKeyPath), 'utf8');
 
     const SimpleAuthenticationDetailsProvider =
       oci.common.SimpleAuthenticationDetailsProvider;
