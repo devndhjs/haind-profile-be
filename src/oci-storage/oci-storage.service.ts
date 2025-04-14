@@ -53,7 +53,10 @@ export class OCIStorageService {
     };
 
     await this.objectStorageClient.putObject(putObjectRequest);
-    return await this.createPreAuthRequest(uniqueName);
+    return {
+      fileName: uniqueName,
+      url: await this.createPreAuthRequest(uniqueName),
+    };
   }
 
   async createPreAuthRequest(fileName: string): Promise<string> {
@@ -73,6 +76,6 @@ export class OCIStorageService {
 
     const response =
       await this.objectStorageClient.createPreauthenticatedRequest(request);
-    return `https://objectstorage.${this.configService.get('OCI_REGION')}.oraclecloud.com${response.preauthenticatedRequest.accessUri}/${fileName}`;
+    return `https://objectstorage.${this.configService.get('OCI_REGION')}.oraclecloud.com${response.preauthenticatedRequest.accessUri}${fileName}`;
   }
 }
