@@ -73,6 +73,6 @@ export class OCIStorageService {
 
     const response =
       await this.objectStorageClient.createPreauthenticatedRequest(request);
-    return `https://objectstorage.${this.configService.get('OCI_REGION')}.oraclecloud.com${response.preauthenticatedRequest.accessUri}`;
+    return `https://objectstorage.${this.configService.get('OCI_REGION')}.oraclecloud.com${response.preauthenticatedRequest.accessUri}/${fileName}`;
   }
 }
