@@ -7,3 +7,12 @@ OCI_REGION=ap-osaka-1
 OCI_NAMESPACE=axe1jq3yolzc
 OCI_BUCKET_NAME=bucket-20250401-0910
 PORT=3000
+
+
+# DB neon
+DB_HOST=ep-frosty-thunder-a4bsrgde-pooler.us-east-1.aws.neon.tech
+DB_PORT=5432
+DB_USER=neondb_owner
+DB_PASS=
+DB_NAME=neondb
+DB_SSL=true
