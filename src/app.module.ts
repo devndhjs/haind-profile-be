@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { OciStorageModule } from './oci-storage/oci-storage.module';
+import { OciStorageModule } from './modules/oci-storage/oci-storage.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserModule } from './user/user.module';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -19,7 +19,7 @@ import { UserModule } from './user/user.module';
       database: process.env.DB_NAME,
       ssl: Boolean(process.env.DB_SSL),
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
     }),
     UserModule,
   ],
