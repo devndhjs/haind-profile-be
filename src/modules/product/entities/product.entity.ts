@@ -22,6 +22,6 @@ export class Product {
   @Column('numeric', { precision: 10, scale: 2 })
   price: number;
 
-  @CreateDateColumn()
-  created_at: Date;
+  @CreateDateColumn({ name: 'created_at' })
+  createdAt: Date;
 }

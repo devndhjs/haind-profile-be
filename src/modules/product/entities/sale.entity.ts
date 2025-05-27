@@ -10,9 +10,9 @@ export class Sale {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @CreateDateColumn()
-  sale_date: Date;
+  @CreateDateColumn({ name: 'sale_date' })
+  saleDate: Date;
 
-  @Column('numeric', { precision: 12, scale: 2 })
-  total_amount: number;
+  @Column('numeric', { precision: 12, scale: 2, name: 'total_amount' })
+  totalAmount: number;
 }
