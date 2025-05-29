@@ -1,13 +1,20 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Board } from "src/modules/board/entities/board.entity";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('users') // Đánh dấu class này là Entity
+@Entity()
 export class User {
-  @PrimaryGeneratedColumn() // Trường ID sẽ tự động được tạo
+  @PrimaryGeneratedColumn()
   id: number;
 
-  @Column() // Trường name
-  name: string;
-
-  @Column() // Trường email
+  @Column({ unique: true })
   email: string;
+
+  @Column()
+  passwordHash: string;
+
+  @OneToMany(() => Board, (board) => board.owner)
+  boards: Board[];
+
+  @CreateDateColumn()
+  createdAt: Date;
 }

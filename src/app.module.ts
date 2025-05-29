@@ -4,8 +4,12 @@ import { AppService } from './app.service';
 import { OciStorageModule } from './modules/oci-storage/oci-storage.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { BoardModule } from './modules/board/board.module';
+import { CardModule } from './modules/card/card.module';
+import { CheckListItemModule } from './modules/check-list-item/check-list-item.module';
+import { CommentModule } from './modules/comment/comment.module';
+import { ListModule } from './modules/list/list.module';
 import { UserModule } from './modules/user/user.module';
-import { ProductModule } from './modules/product/product.module';
 
 @Module({
   imports: [
@@ -22,8 +26,12 @@ import { ProductModule } from './modules/product/product.module';
       autoLoadEntities: true,
       synchronize: false,
     }),
+    BoardModule,
+    CardModule,
+    CheckListItemModule,
+    CommentModule,
+    ListModule,
     UserModule,
-    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService, ConfigService],
