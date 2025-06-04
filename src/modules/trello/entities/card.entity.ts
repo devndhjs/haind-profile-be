@@ -1,7 +1,14 @@
-import { ChecklistItem } from "src/modules/check-list-item/entities/check-list-item.entity";
-import { List } from "src/modules/list/entities/list.entity";
-import { Comment } from "src/modules/comment/entities/comment.entity";
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, CreateDateColumn } from "typeorm";
+import { ChecklistItem } from 'src/modules/trello/entities/check-list-item.entity';
+import { List } from 'src/modules/trello/entities/list.entity';
+import { Comment } from 'src/modules/trello/entities/comment.entity';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  OneToMany,
+  CreateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Card {

@@ -1,7 +1,12 @@
-import { Card } from "src/modules/card/entities/card.entity";
-import { User } from "src/modules/user/entities/user.entity";
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn } from "typeorm";
-
+import { Card } from 'src/modules/trello/entities/card.entity';
+import { User } from 'src/modules/user/entities/user.entity';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  CreateDateColumn,
+} from 'typeorm';
 
 @Entity()
 export class Comment {

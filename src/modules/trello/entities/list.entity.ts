@@ -1,6 +1,12 @@
-import { Board } from "src/modules/board/entities/board.entity";
-import { Card } from "src/modules/card/entities/card.entity";
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from "typeorm";
+import { Board } from 'src/modules/trello/entities/board.entity';
+import { Card } from 'src/modules/trello/entities/card.entity';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  OneToMany,
+} from 'typeorm';
 
 @Entity()
 export class List {

@@ -1,10 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { CreateListDto } from './dto/create-list.dto';
-import { UpdateListDto } from './dto/update-list.dto';
+import { CreateListDto } from '../dto/create-list.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { List } from './entities/list.entity';
+import { List } from '../entities/list.entity';
 import { Repository } from 'typeorm';
-import { Board } from '../board/entities/board.entity';
+import { Board } from '../entities/board.entity';
 
 @Injectable()
 export class ListService {
@@ -34,10 +33,6 @@ export class ListService {
 
   findOne(id: number) {
     return this.listRepo.findOneBy({ id });
-  }
-
-  update(id: number, updateListDto: UpdateListDto) {
-    return `This action updates a #${id} list`;
   }
 
   remove(id: number) {
