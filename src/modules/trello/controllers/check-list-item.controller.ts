@@ -8,25 +8,26 @@ import {
   Delete,
 } from '@nestjs/common';
 import { CheckListItemService } from '../services/check-list-item.service';
+import { CreateChecklistItemDto } from '../dto/create-check-list-item.dto';
 
 @Controller('check-list-item')
 export class CheckListItemController {
   constructor(private readonly checkListItemService: CheckListItemService) {}
 
-  // @Post()
-  // create(@Body() createCheckListItemDto: CreateChecklistItemDto) {
-  //   return this.checkListItemService.create(createCheckListItemDto);
-  // }
+  @Post()
+  create(@Body() createCheckListItemDto: CreateChecklistItemDto) {
+    return this.checkListItemService.create(createCheckListItemDto);
+  }
 
-  // @Get()
-  // findAll() {
-  //   return this.checkListItemService.findAll();
-  // }
+  @Get()
+  findAll() {
+    return this.checkListItemService.findAll();
+  }
 
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.checkListItemService.findOne(+id);
-  // }
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.checkListItemService.findOne(+id);
+  }
 
   // @Patch(':id')
   // update(
